@@ -5,6 +5,7 @@ import application.trabajoBiblioteca.clasesAbstractasInterfaces.Persona;
 import application.trabajoBiblioteca.documentos.Articulo;
 import application.trabajoBiblioteca.documentos.Libro;
 import application.trabajoBiblioteca.documentos.Revista;
+import application.trabajoBiblioteca.personas.Bibliotecario;
 import application.trabajoBiblioteca.personas.Cliente;
 
 import java.time.LocalDate;
@@ -85,5 +86,9 @@ public class Almacen {
         this.almacenPersonas.add(new Cliente("nombreCliente2", 16, "contraseña", "cliente", 2));
         this.almacenPersonas.add(new Cliente("nombreCliente3", 50, "contraseña", "cliente", 3));
         this.almacenPersonas.add(new Cliente("nombreCliente4", 12, "contraseña", "cliente", 4));
+
+        this.almacenPersonas.add(new Bibliotecario("nombreBiliotecario1", 40, "contraseña", "biliotecario", 1));
     }
+
+
 }

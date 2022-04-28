@@ -54,19 +54,6 @@ public class Cliente extends Persona implements InterfaceCliente {
         return Objects.hash(super.hashCode(), getDocumentosReservados());
     }
 
-
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "nombre='" + this.getNombre() + '\'' +
-                ", edad=" + this.getEdad() +
-                ", password='" + this.getPassword() + '\'' +
-                ", user=" + this.getUser() +
-                ", rol='" + this.getRol() + '\'' +
-                ", id=" + this.getId() +
-                '}';
-    }
-
     /**
      * Filtra entre tres campos el documento que el usuario quiere reservar
      * @param almacenDocumentos Almacen donde se encuentra el documento
@@ -319,5 +306,17 @@ public class Cliente extends Persona implements InterfaceCliente {
              almacenDocumentos) {
             System.out.println(doc);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nombre='" + this.getNombre() + '\'' +
+                ", edad=" + this.getEdad() +
+                ", password='" + this.getPassword() + '\'' +
+                ", user=" + this.getUser() +
+                ", rol='" + this.getRol() + '\'' +
+                ", id=" + this.getId() +
+                '}';
     }
 }
