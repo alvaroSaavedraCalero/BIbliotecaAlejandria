@@ -1,24 +1,17 @@
 package application.trabajoBiblioteca;
 
-import application.trabajoBiblioteca.documentos.Libro;
 
-import java.time.LocalDate;
+import application.trabajoBiblioteca.menuAlmacen.Almacen;
+import application.trabajoBiblioteca.personas.Cliente;
+
+import java.util.ArrayList;
+
 
 public class Main {
     public static void main(String[] args) {
-        Libro libro = new Libro(
-                "Libro1",
-                "autoresLibro1",
-                "editorialLibro1",
-                false,
-                false,
-                1,
-                LocalDate.now(),
-                null,
-                56,
-                8
-        );
-
-        System.out.println(libro);
+        Almacen almacen = new Almacen();
+        Cliente cliente = (Cliente) almacen.getAlmacenPersonas().get(1);
+        cliente.reservarDocumento(almacen.getAlmacenDocumentos());
+        System.out.println(cliente.getDocumentosReservados());
     }
 }

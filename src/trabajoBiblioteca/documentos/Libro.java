@@ -12,16 +12,16 @@ public class Libro extends Documento {
 
     /**
      * Constructor con atributos heredados y propios
-     * @param nombre
-     * @param autores
-     * @param editorial
-     * @param tematicaSensible
-     * @param reservado
-     * @param id
-     * @param fechaPublicacion
-     * @param personaReserva
-     * @param numPaginas
-     * @param edicion
+     * @param id Integer
+     * @param nombre String
+     * @param autores String
+     * @param editorial String
+     * @param edicion Integer
+     * @param numPaginas Integer
+     * @param tematicaSensible boolean
+     * @param reservado boolean
+     * @param fechaPublicacion LocalDate
+     * @param personaReserva Persona
      */
     public Libro(Integer id, String nombre, String autores, String editorial,Integer edicion,Integer numPaginas, boolean tematicaSensible, boolean reservado, LocalDate fechaPublicacion, Persona personaReserva) {
         super(nombre, autores, editorial, tematicaSensible, reservado, id, fechaPublicacion, personaReserva);

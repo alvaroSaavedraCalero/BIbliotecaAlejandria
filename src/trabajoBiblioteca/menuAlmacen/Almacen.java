@@ -9,15 +9,52 @@ import application.trabajoBiblioteca.personas.Cliente;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Objects;
 
 public class Almacen {
     private ArrayList<Documento> almacenDocumentos;
-    private HashSet<Persona> almacenPersonas;
+    private ArrayList<Persona> almacenPersonas;
+
+    public ArrayList<Documento> getAlmacenDocumentos() {
+        return almacenDocumentos;
+    }
+
+    public void setAlmacenDocumentos(ArrayList<Documento> almacenDocumentos) {
+        this.almacenDocumentos = almacenDocumentos;
+    }
+
+    public ArrayList<Persona> getAlmacenPersonas() {
+        return almacenPersonas;
+    }
+
+    public void setAlmacenPersonas(ArrayList<Persona> almacenPersonas) {
+        this.almacenPersonas = almacenPersonas;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Almacen)) return false;
+        Almacen almacen = (Almacen) o;
+        return Objects.equals(getAlmacenDocumentos(), almacen.getAlmacenDocumentos()) && Objects.equals(getAlmacenPersonas(), almacen.getAlmacenPersonas());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getAlmacenDocumentos(), getAlmacenPersonas());
+    }
+
+    @Override
+    public String toString() {
+        return "Almacen{" +
+                "almacenDocumentos=" + almacenDocumentos +
+                ", almacenPersonas=" + almacenPersonas +
+                '}';
+    }
 
     public Almacen(){
         this.almacenDocumentos = new ArrayList<>();
-        this.almacenPersonas = new HashSet<>();
+        this.almacenPersonas = new ArrayList<Persona>();
 
         this.almacenDocumentos.add(new Libro(1, "EL QUIJOTE", "MIGUEL DE CERVANTES", "ANAYA", 3, 1785, false, false, LocalDate.of(2015, 5, 21), null));
         this.almacenDocumentos.add(new Libro(2, "HARRY POTTER", "J.K. ROWLING", "PLANETA", 25, 4563, false, false, LocalDate.of(2016, 7, 26), null));
@@ -45,5 +82,8 @@ public class Almacen {
         this.almacenDocumentos.add(new Articulo(7, "SYNTHESIS", "TRUJILLO SANTIAGO", "BIOMATERIALS", false, false, LocalDate.of(2015, 8, 15), null));
 
         this.almacenPersonas.add(new Cliente("nombreCliente1", 25, "contraseña", "cliente", 1));
+        this.almacenPersonas.add(new Cliente("nombreCliente2", 16, "contraseña", "cliente", 2));
+        this.almacenPersonas.add(new Cliente("nombreCliente3", 50, "contraseña", "cliente", 3));
+        this.almacenPersonas.add(new Cliente("nombreCliente4", 12, "contraseña", "cliente", 4));
     }
 }
