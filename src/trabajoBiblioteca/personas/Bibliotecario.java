@@ -45,25 +45,62 @@ public class Bibliotecario extends Cliente implements InterfaceBibliotecario {
         Integer edadCliente = Funciones.pedirNumero();
         System.out.println("¿Cual es la contraseña del nuevo Cliente?");
         String passCliente = entrada.nextLine();
-        String userCliente = entrada.nextLine();
         Integer idCliente = null;
         boolean continuar = true;
-
+        while (continuar){
+            System.out.println("¿Que id numerico quiere el nuevo Cliente?");
+            idCliente = Funciones.pedirNumero();
+            if (Funciones.existeIdPersonas(almacenPersonas, idCliente)){
+                System.out.println("Ese id ya existe, escoja otro.");
+            } else {
+                System.out.println("Id disponible.");
+                continuar = false;
+            }
+        }
 
         Cliente nuevoCliente = new Cliente(
                 nombreCliente,
                 edadCliente,
                 passCliente,
-                userCliente,
+                "CLIENTE",
                 idCliente
                 );
         almacenPersonas.add(nuevoCliente);
-
+        System.out.println("User: " + nuevoCliente.getUser());
+        System.out.println("Password: " + nuevoCliente.getPassword());
     }
 
     @Override
     public void darBajaCliente(ArrayList<Persona> almacenPersonas) {
-
+        Iterator<Persona> iterator = almacenPersonas.iterator();
+        boolean continuar = true;
+        while (continuar && iterator.hasNext()){
+            Persona persona = iterator.next();
+            System.out.println("¿Cual es el id de la persona?");
+            Integer idPersona = Funciones.pedirNumero();
+            if (persona.getId().equals(idPersona)){
+                System.out.println("Se va a eliminar a: ");
+                System.out.println(persona);
+                boolean cont = true;
+                while (cont){
+                    System.out.println("¿Esta seguro? 1.Si/2.No");
+                    Integer respuesta = Funciones.pedirNumero();
+                    if (respuesta.equals(1)){
+                        iterator.remove();
+                        cont = false;
+                    } else if (respuesta.equals(2)){
+                        System.out.println("Saliendo...");
+                        cont = false;
+                        continuar = false;
+                    } else {
+                        System.out.println("No ha escrito un numero correcto");
+                    }
+                }
+            }
+            if (iterator.hasNext() == false){
+                System.out.println("No se ha encontrado ningun id en el almacen.");
+            }
+        }
     }
 
     @Override
