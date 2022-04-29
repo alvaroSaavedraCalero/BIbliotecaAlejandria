@@ -1,4 +1,4 @@
-package application.trabajoBiblioteca.clasesAbstractasInterfaces;
+package clasesAbstractasInterfaces;
 
 import java.util.Comparator;
 import java.util.Objects;

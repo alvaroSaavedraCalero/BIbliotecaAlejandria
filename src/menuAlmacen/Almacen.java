@@ -1,12 +1,12 @@
-package application.trabajoBiblioteca.menuAlmacen;
+package menuAlmacen;
 
-import application.trabajoBiblioteca.clasesAbstractasInterfaces.Documento;
-import application.trabajoBiblioteca.clasesAbstractasInterfaces.Persona;
-import application.trabajoBiblioteca.documentos.Articulo;
-import application.trabajoBiblioteca.documentos.Libro;
-import application.trabajoBiblioteca.documentos.Revista;
-import application.trabajoBiblioteca.personas.Bibliotecario;
-import application.trabajoBiblioteca.personas.Cliente;
+import clasesAbstractasInterfaces.Documento;
+import clasesAbstractasInterfaces.Persona;
+import documentos.Articulo;
+import documentos.Libro;
+import documentos.Revista;
+import personas.Bibliotecario;
+import personas.Cliente;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

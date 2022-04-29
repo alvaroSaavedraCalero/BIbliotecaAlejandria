@@ -1,9 +1,7 @@
-package application.trabajoBiblioteca;
 
-
-import application.trabajoBiblioteca.menuAlmacen.Almacen;
-import application.trabajoBiblioteca.personas.Bibliotecario;
-import application.trabajoBiblioteca.personas.Cliente;
+import menuAlmacen.Almacen;
+import personas.Bibliotecario;
+import personas.Cliente;
 
 
 

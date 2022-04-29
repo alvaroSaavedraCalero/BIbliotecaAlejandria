@@ -1,4 +1,4 @@
-package application.trabajoBiblioteca.clasesAbstractasInterfaces;
+package clasesAbstractasInterfaces;
 
 import java.time.LocalDate;
 import java.util.Comparator;

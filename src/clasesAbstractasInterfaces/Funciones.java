@@ -1,4 +1,4 @@
-package application.trabajoBiblioteca.clasesAbstractasInterfaces;
+package clasesAbstractasInterfaces;
 
 import java.util.ArrayList;
 import java.util.Iterator;

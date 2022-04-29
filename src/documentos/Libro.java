@@ -1,7 +1,7 @@
-package application.trabajoBiblioteca.documentos;
+package documentos;
 
-import application.trabajoBiblioteca.clasesAbstractasInterfaces.Documento;
-import application.trabajoBiblioteca.clasesAbstractasInterfaces.Persona;
+import clasesAbstractasInterfaces.Documento;
+import clasesAbstractasInterfaces.Persona;
 
 import java.time.LocalDate;
 import java.util.Objects;

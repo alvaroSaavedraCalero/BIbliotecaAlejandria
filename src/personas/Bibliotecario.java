@@ -1,9 +1,9 @@
-package application.trabajoBiblioteca.personas;
+package personas;
 
-import application.trabajoBiblioteca.clasesAbstractasInterfaces.Documento;
-import application.trabajoBiblioteca.clasesAbstractasInterfaces.Funciones;
-import application.trabajoBiblioteca.clasesAbstractasInterfaces.InterfaceBibliotecario;
-import application.trabajoBiblioteca.clasesAbstractasInterfaces.Persona;
+import clasesAbstractasInterfaces.Documento;
+import clasesAbstractasInterfaces.Funciones;
+import clasesAbstractasInterfaces.InterfaceBibliotecario;
+import clasesAbstractasInterfaces.Persona;
 
 import java.util.ArrayList;
 import java.util.Iterator;

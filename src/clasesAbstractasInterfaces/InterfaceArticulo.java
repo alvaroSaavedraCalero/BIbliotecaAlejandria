@@ -1,4 +1,4 @@
-package application.trabajoBiblioteca.clasesAbstractasInterfaces;
+package clasesAbstractasInterfaces;
 
 public interface InterfaceArticulo {
     void visualizarTodasCriticas();
