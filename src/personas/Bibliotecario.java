@@ -6,6 +6,7 @@ import clasesAbstractasInterfaces.InterfaceBibliotecario;
 import clasesAbstractasInterfaces.Persona;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -105,17 +106,69 @@ public class Bibliotecario extends Cliente implements InterfaceBibliotecario {
 
     @Override
     public void consultarCliente(ArrayList<Persona> almacenPersonas) {
+        Iterator<Persona> iterator = almacenPersonas.iterator();
+        boolean continuar = true;
+        while (continuar) {
+            System.out.println("¿Por que campo quiere consultar el cliente?");
+            System.out.println("1. Id");
+            System.out.println("2. Nombre");
+            System.out.println("3. Salir");
+            Integer respuesta = Funciones.pedirNumero();
+            switch (respuesta){
+                case 1:
+                    System.out.println("¿Cual es el Id de la persona?");
+                    Integer idPersona = Funciones.pedirNumero();
+                    boolean continuar1 = true;
+                    while (iterator.hasNext() && continuar1){
+                        Persona per = iterator.next();
+                        if (per.getId().equals(idPersona)){
+                            System.out.println(per);
+                            continuar1 = false;
+                        }
+                        if (iterator.hasNext() == false){
+                            System.out.println("No se encontro ninguna persona con ese id");
+                        }
+                    }
+                break;
 
+                case 2:
+                    System.out.println("¿Cual es el nombre de la persona?");
+                    String nombrePersona = entrada.nextLine();
+                    boolean continuar2 = true;
+                    while (iterator.hasNext() && continuar2){
+                        Persona per = iterator.next();
+                        HashSet<Persona> personas = new HashSet<>();
+                        if (per.getNombre().equals(nombrePersona)){
+                            personas.add(per);
+                        }
+                        System.out.println("Las personas con ese nombre son: ");
+                        System.out.println(personas);
+                        continuar2 = false;
+                        if (iterator.hasNext() == false){
+                            System.out.println("No se han encontrado personas con ese nombre");
+                        }
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("Saliendo...");
+                    continuar = false;
+                    break;
+            }
+        }
     }
 
     @Override
-    public void comprobarDocumento(ArrayList<Documento> almacenDocumentos) {
-
+    public void consultarTodosClientes(ArrayList<Persona> almacenPersonas) {
+        for (Persona per:
+             almacenPersonas) {
+            System.out.println(per);
+        }
     }
 
     @Override
     public void darAltaDocumento(ArrayList<Documento> almacenDocumentos) {
-
+        System.out.println("¿Que tipo de documento quiere añadir?");
     }
 
     @Override
