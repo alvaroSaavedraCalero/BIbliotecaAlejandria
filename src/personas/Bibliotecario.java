@@ -4,7 +4,9 @@ import clasesAbstractasInterfaces.Documento;
 import clasesAbstractasInterfaces.Funciones;
 import clasesAbstractasInterfaces.InterfaceBibliotecario;
 import clasesAbstractasInterfaces.Persona;
+import documentos.Libro;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -166,9 +168,10 @@ public class Bibliotecario extends Cliente implements InterfaceBibliotecario {
         }
     }
 
+
     @Override
     public void darAltaDocumento(ArrayList<Documento> almacenDocumentos) {
-        System.out.println("¿Que tipo de documento quiere añadir?");
+
     }
 
     @Override
