@@ -1,6 +1,8 @@
 package clasesAbstractasInterfaces;
 
+import documentos.Articulo;
 import documentos.Libro;
+import documentos.Revista;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
@@ -73,7 +75,7 @@ public class Funciones {
         System.out.println("2. Falso");
         while (continuar) {
             respuesta = pedirNumero();
-            if (respuesta == 1) {cd 
+            if (respuesta == 1) {
                 retorno = true;
                 continuar = false;
             } else if (respuesta == 2) {
@@ -151,5 +153,45 @@ public class Funciones {
         Persona personaReserva = null;
 
         return new Libro(id, nombre, autores, editorial, edicion, numPaginas, tematicaSensible, reservado, fechaPublicacion, personaReserva);
+    }
+
+    public static Articulo crearArticulo(ArrayList<Documento> almacenDocumentos) {
+        System.out.println("Elije un id: ");
+        Integer id = Funciones.pedirIdDocumentos(almacenDocumentos, Funciones.pedirNumero());
+        System.out.println("¿Cual es el nombre del articulo?");
+        String nombre = entrada.nextLine().toUpperCase();
+        System.out.println("¿Cual/es son los autores del articulo?");
+        String autores = entrada.nextLine().toUpperCase();
+        System.out.println("¿Cual es la editorial del articulo?");
+        String editorial = entrada.nextLine().toUpperCase();
+        System.out.println("¿Es un articulo de tematica sensible?");
+        boolean tematicaSensible = Funciones.pideBooleano();
+        boolean reservado = false;
+        System.out.println("¿Cual fue la fecha de publicacion?");
+        LocalDate fechaPublicacion = Funciones.pedirFecha();
+        Persona personaReserva = null;
+
+        return new Articulo(id, nombre, autores, editorial, tematicaSensible, reservado, fechaPublicacion, personaReserva);
+    }
+
+    public static Revista crearRevista(ArrayList<Documento> almacenDocumentos) {
+        System.out.println("Elije un id: ");
+        Integer id = Funciones.pedirIdDocumentos(almacenDocumentos, Funciones.pedirNumero());
+        System.out.println("¿Cual es el nombre del revista?");
+        String nombre = entrada.nextLine().toUpperCase();
+        System.out.println("¿Cual/es son los autores del revista?");
+        String autores = entrada.nextLine().toUpperCase();
+        System.out.println("¿Cual es la editorial del revista?");
+        String editorial = entrada.nextLine().toUpperCase();
+        System.out.println("¿Es un revista de tematica sensible?");
+        boolean tematicaSensible = Funciones.pideBooleano();
+        System.out.println("¿Cual es el numero de la revista?");
+        Integer numRevista = Funciones.pedirNumero();
+        boolean reservado = false;
+        System.out.println("¿Cual fue la fecha de publicacion?");
+        LocalDate fechaPublicacion = Funciones.pedirFecha();
+        Persona personaReserva = null;
+
+        return new Revista(id, nombre, autores, editorial, tematicaSensible, numRevista, reservado, fechaPublicacion, personaReserva);
     }
 }

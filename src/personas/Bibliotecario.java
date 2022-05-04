@@ -171,12 +171,48 @@ public class Bibliotecario extends Cliente implements InterfaceBibliotecario {
 
     @Override
     public void darAltaDocumento(ArrayList<Documento> almacenDocumentos) {
+        boolean continuar = true;
+        while (continuar) {
+            System.out.println("¿Que tipo de documento quiere añadir?");
+            System.out.println("1. Libro");
+            System.out.println("2. Articulo");
+            System.out.println("3. Revista");
+            int respuesta = Funciones.pedirNumero();
+            switch (respuesta) {
+                case 1:
+                    almacenDocumentos.add(Funciones.crearLibro(almacenDocumentos));
+                    continuar = false;
+                    break;
 
+                case 2:
+                    almacenDocumentos.add(Funciones.crearArticulo(almacenDocumentos));
+                    continuar = false;
+                    break;
+
+                case 3:
+                    almacenDocumentos.add(Funciones.crearRevista(almacenDocumentos));
+                    continuar = false;
+                    break;
+
+                default:
+                    System.out.println("No ha escrito una opcion correcta");
+            }
+        }
     }
 
     @Override
     public void darBajaDocumento(ArrayList<Documento> almacenDocumentos) {
-
+        Iterator<Documento> iterator = almacenDocumentos.iterator();
+        boolean continuar = true;
+        System.out.println("¿Cual es el Id del documento?");
+        Integer id = Funciones.pedirIdDocumentos(almacenDocumentos, Funciones.pedirNumero());
+        while (continuar && iterator.hasNext()) {
+            Documento documento = iterator.next();
+            if (documento.getId().equals(id)){
+                almacenDocumentos.remove(documento);
+                continuar = false;
+            }
+        }
     }
 
     @Override
